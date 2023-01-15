@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+.cursor{
+    cursor: pointer;
+}
+
+.c-f {
+  
+    padding-left: 0; 
+  
+  }
+
+.bg-container-web{
+    height: 63vh;
+    background-image: url(/assets/img/faq-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.form-c{
+    position: absolute;
+    background-color: transparent;
+    margin-top: 10rem;
+    width: 100%;
+    border-radius: 8px;
+}
+.title{
+    margin-left: 0;
+    color: white;
+    font-size: 60px;
+}
+.sub-title{
+    margin-left: 0;
+    color: white;
+    font-size: 40px;
+}
+.btn{
+    color: white !important;
+    width: 100%;
+    background-color: #013D89;
+  }
