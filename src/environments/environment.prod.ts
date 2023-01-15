@@ -1,12 +1,12 @@
 export const environment = {
   firebase: {
-    projectId: 'rent-cars-app',
-    appId: '1:940868539494:web:19e7304cf05c3f1ebf89a7',
-    storageBucket: 'rent-cars-app.appspot.com',
+    projectId: 'support-8225a',
+    appId: '1:1026321055747:web:4ceaad81ec0ac73a46ce36',
+    storageBucket: 'support-8225a.appspot.com',
     locationId: 'us-central',
-    apiKey: 'AIzaSyCBkzYkWP0_Czy7dxyc29DDLcj1hik2AbQ',
-    authDomain: 'rent-cars-app.firebaseapp.com',
-    messagingSenderId: '940868539494',
+    apiKey: 'AIzaSyC7nuDlJyhLcj40L3bN1UEUP-CmwXUXnAI',
+    authDomain: 'support-8225a.firebaseapp.com',
+    messagingSenderId: '1026321055747',
   },
   production: true
 };

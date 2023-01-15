@@ -12,5 +12,5 @@ export interface DatosCars{
     type:string;
     url:string;
     persons:number;
-    chofer:boolean;
+    chofer:boolean
 }

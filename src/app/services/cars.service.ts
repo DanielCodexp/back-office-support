@@ -1,39 +1,42 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { collection, Firestore, addDoc, collectionData, doc, updateDoc, getDoc } from '@angular/fire/firestore';
+import { deleteDoc } from '@firebase/firestore';
 import { Observable } from 'rxjs';
 import { DatosCars } from '../interface/cars-interface';
-import { DataCarsRent } from '../interface/dataCarsRent';
+import { Country, Time } from '../interface/countries';
+import { Faq } from '../interface/faq';
+import { DatosRequest, DatosService } from '../interface/UserProfile';
+import { BaseService } from './base-service.service';
+
 @Injectable({
   providedIn: 'root'
 })
 export class CarsService {
 
-  constructor(private firetore: Firestore) { }
+  constructor(private firetore: Firestore, private baseService: BaseService) { }
 
+  public getFaq(): Observable<Faq []>{
+    return this.baseService.get('assets/json/faq.json');
+  }
+  
+  public getCountryNames(): Observable<Country []>{
+    return this.baseService.get('assets/json/countries.json');
+  }
 
-// Agregar un carro a renta
-
-
-  addCar(car:DatosCars){
-    const carRef = collection(this.firetore, 'car');
+  public getTime(): Observable<Time []>{
+    return this.baseService.get('assets/json/time.json');
+  }
+// Agregar un carro 
+  addCars(car:DatosService){
+    const carRef = collection(this.firetore, 'rent-info');
     return addDoc(carRef, car);
   }
-
-
-// Traer usuarios que rentaron y carros rentadao
-  getCarsRent(): Observable<DataCarsRent[]> {
-    const carRef = collection(this.firetore, 'rent-info');
-    return collectionData(carRef, {idField: 'id'}) as Observable<DataCarsRent[]>;
-  }
-
-  //Traer autos
-  
+// Traer carros disponible
   getCars(): Observable<DatosCars[]> {
     const carRef = collection(this.firetore, 'car');
     return collectionData(carRef, {idField: 'id'}) as Observable<DatosCars[]>;
   }
-
-  // Traer datos del usuario
 
 
    async getOrder(id:string) {
@@ -43,8 +46,6 @@ export class CarsService {
       return doc.data()
     })
   }
-
-  //Traer auto seleccionado por el usuario
 
   async getCarByOrder(id:string) {
     const carDocRef = doc(this.firetore, "car", id);

@@ -1,5 +1,14 @@
 {
   "projects": {
-    "default": "rent-cars-app"
+    "default": "support-8225a"
+  },
+  "targets": {
+    "support-8225a": {
+      "hosting": {
+        "support": [
+          "support-8225a"
+        ]
+      }
+    }
   }
 }
