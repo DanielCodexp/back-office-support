@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { collection, Firestore, addDoc, collectionData, doc, updateDoc, getDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { DatosCars } from '../interface/cars-interface';
-import { DataCarsRent } from '../interface/dataCarsRent';
+import { REPORTS } from '../interface/Reports';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,15 +15,15 @@ export class CarsService {
 
 
   addCar(car:DatosCars){
-    const carRef = collection(this.firetore, 'car');
+    const carRef = collection(this.firetore, 'Servicio');
     return addDoc(carRef, car);
   }
 
 
 // Traer usuarios que rentaron y carros rentadao
-  getCarsRent(): Observable<DataCarsRent[]> {
+  getCarsRent(): Observable<REPORTS[]> {
     const carRef = collection(this.firetore, 'report-info');
-    return collectionData(carRef, {idField: 'id'}) as Observable<DataCarsRent[]>;
+    return collectionData(carRef, {idField: 'id'}) as Observable<REPORTS[]>;
   }
 
   //Traer autos

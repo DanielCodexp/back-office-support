@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataCarsRent } from 'src/app/interface/dataCarsRent';
 import { CarsService } from 'src/app/services/cars.service';
+import { REPORTS } from '../../interface/Reports';
 
 
 
@@ -10,15 +10,15 @@ import { CarsService } from 'src/app/services/cars.service';
   styleUrls: ['./reports.component.scss']
 })
 export class ReportsComponent implements OnInit {
-  public carsRent: DataCarsRent[] = [];
+  public reportInf: REPORTS[] = [];
   public datosCar: any = [];
   constructor( private carService: CarsService,) { }
 
   ngOnInit(): void {
    
     this.carService.getCarsRent().subscribe(response => {
-      console.log(this.carsRent);
-      this.carsRent = response;
+      console.log(response);
+      this.reportInf = response;
     })
     
   }

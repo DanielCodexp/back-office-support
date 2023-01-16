@@ -5,6 +5,8 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { HomeComponent } from './home/home.component';
 import { ReportsComponent } from './reports/reports.component';
 import { NewServiceComponent } from './new-service/new-service.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoadingButton } from '../directives/loading-button.directive';
 
 
 
@@ -12,7 +14,7 @@ import { NewServiceComponent } from './new-service/new-service.component';
   declarations: [
     HomeComponent,
     ReportsComponent,
-    NewServiceComponent
+    NewServiceComponent,
   ],
   exports: [
     HomeComponent
@@ -20,6 +22,7 @@ import { NewServiceComponent } from './new-service/new-service.component';
   imports: [
     CommonModule,
     PagesRoutingModule,
+    ReactiveFormsModule,
   ]
 })
 export class PagesModule { }
